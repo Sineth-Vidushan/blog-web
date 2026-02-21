@@ -8,7 +8,7 @@ import { useAuth } from "../context/AuthContext";
 import "./Style/Home.css";
 
 // Icons
-import { FiSearch, FiClock, FiArrowRight, FiMail, FiVideo, FiCalendar, FiTrendingUp, FiBookOpen, FiUser, FiUsers } from "react-icons/fi";
+import { FiSearch, FiClock, FiArrowRight, FiMail, FiVideo, FiCalendar, FiTrendingUp, FiBookOpen, FiUser,FiUsers } from "react-icons/fi";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import { HiOutlineUserGroup } from "react-icons/hi";
@@ -153,7 +153,7 @@ export default function Home() {
           likesCount: increment(-1)
         });
         setPosts(prev => prev.map(p => 
-          p.id === postId ? { ...p, likesCount: Math.max(0, (p.likesCount || 0) - 1) } : p
+          p.id === postId? { ...p, likesCount: Math.max(0, (p.likesCount || 0) - 1) } : p
         ));
       } else {
         newLiked.add(postId);
@@ -281,7 +281,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {isLoading ? (
+          {isLoading? (
             <div className="articles-grid">
               {[...Array(6)].map((_, i) => (
                 <div key={i} className="article-card skeleton">
@@ -294,10 +294,10 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          ) : filteredPosts.length === 0 ? (
+          ): filteredPosts.length === 0 ? (
             <div className="empty-state">
               <h3>No articles found</h3>
-              <p>{searchQuery ? `No results for "${searchQuery}"` : 'Check back soon for new content!'}</p>
+              <p>{searchQuery ? `No results for "${searchQuery}"`: 'Check back soon for new content!'}</p>
               {searchQuery && (
                 <button onClick={() => setSearchQuery('')} className="empty-state-button">
                   Clear Search
@@ -382,7 +382,7 @@ export default function Home() {
                           <button
                             className={`article-like ${likedPosts.has(post.id) ? 'active' : ''}`}
                             onClick={() => handleLikePost(post.id)}
-                            aria-label={likedPosts.has(post.id) ? 'Unlike' : 'Like'}
+                            aria-label={likedPosts.has(post.id) ? 'Unlike': 'Like'}
                           >
                             {likedPosts.has(post.id) ? <AiFillHeart /> : <AiOutlineHeart />}
                             <span>{post.likesCount || 0}</span>
@@ -437,7 +437,7 @@ export default function Home() {
                 <FiMail className="newsletter-input-icon" />
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="Enter your email."
                   className="newsletter-input"
                   required
                 />
