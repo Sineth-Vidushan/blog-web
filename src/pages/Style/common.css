@@ -1,0 +1,21 @@
+/* common.css - Reusable components */
+.btn {
+  /* Your existing button styles */
+}
+
+.card {
+  /* Your existing card styles */
+}
+
+.form-group {
+  /* Standard form group */
+}
+
+.required-marker {
+  color: #F44336;
+}
+
+.error-message,
+.success-message {
+  /* Standard message styles */
+}

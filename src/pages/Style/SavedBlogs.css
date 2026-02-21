@@ -1,0 +1,236 @@
+.saved-blogs-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0e0e0e, #050505);
+  padding: 2rem 1rem;
+}
+
+.saved-blogs-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.saved-blogs-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.saved-blogs-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.saved-blogs-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.saved-blogs-loading,
+.saved-blogs-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+}
+
+.saved-blogs-empty .empty-icon {
+  font-size: 4rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.saved-blogs-empty h3 {
+  color: var(--text-heading);
+  margin-bottom: 0.5rem;
+}
+
+.saved-blogs-empty .empty-action {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: var(--text-heading);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.saved-blogs-empty .empty-action:hover {
+  background: var(--accent-dark);
+}
+
+.saved-blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.saved-blog-card {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.saved-blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+.saved-card-media {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.saved-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.saved-blog-card:hover .saved-card-media img {
+  transform: scale(1.05);
+}
+
+.saved-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.saved-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.saved-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.saved-card-author {
+  font-weight: 600;
+  color: var(--text-heading);
+  font-size: 0.9rem;
+}
+
+.saved-card-date {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.saved-remove-btn {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.saved-remove-btn:hover {
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.saved-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  text-decoration: none;
+  line-height: 1.3;
+  transition: color 0.2s;
+}
+
+.saved-card-title:hover {
+  color: var(--accent);
+}
+
+.saved-card-excerpt {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.saved-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.saved-card-category {
+  padding: 0.25rem 0.75rem;
+  background: rgba(203, 193, 157, 0.1);
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.saved-card-like {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.saved-card-like:hover {
+  border-color: var(--accent);
+  color: #ff6b6b;
+}
+
+.saved-card-like.liked {
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.saved-card-read-time {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .saved-blogs-grid {
+    grid-template-columns: 1fr;
+  }
+}
